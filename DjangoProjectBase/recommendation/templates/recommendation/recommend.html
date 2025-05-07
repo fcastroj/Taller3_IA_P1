@@ -10,10 +10,18 @@
   </form>
 
   {% if movie %}
+  <div class="row row-cols-1 row-cols-md-3 g-4"></div>
     <h3>Película Recomendada</h3>
-    <p><strong>Título:</strong> {{ movie.title }}</p>
-    <img src="{{ movie.image.url }}" class="card-img-top" alt="...">
-    <p><strong>Descripción:</strong> {{ movie.description }}</p>
-    <p><strong>Similitud:</strong> {{ similarity }}</p>
-  {% endif %}
+      <div class="card">
+        <img src="{{ movie.image.url }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-title fw-bold">{{ movie.title}}</p>
+        <p class="card-text"><strong>Género: </strong>{{ movie.genre}}</p>
+        <p class="card-text"><strong>Descripción: </strong>{{ movie.description}}</p>
+        <p class="card-text"><strong>Año: </strong>{{ movie.year}}</p>
+        <p class="card-text"><strong>Similitud: </strong>{{ similarity }}</p>
+      </div>
+      </div>
+  </div>
+    {% endif %}
 {% endblock %}
